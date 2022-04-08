@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
 using WebAPI1.Models;
 using System.Data.Entity;
 
@@ -18,15 +17,11 @@ namespace WebAPI1.Controllers
         {
             //var departments = db.Departments.Where(x => x.id == 5).FirstOrDefault();
             var departments = db.Departments.ToList();
-
             return Request.CreateResponse(HttpStatusCode.OK, departments);
         }
 
-
         public string Post(Department department)
         {
-
-           
             try
             {
                 db.Departments.Add(department);
@@ -43,10 +38,6 @@ namespace WebAPI1.Controllers
 
         public string Put(int id ,Department department)
         {
-
-            
-
-            
             try
             {
                 Department dep = db.Departments.Find(id);
@@ -63,9 +54,7 @@ namespace WebAPI1.Controllers
         }
 
         public string Delete(int id)
-        {
-
-            
+        {      
             try
             {
                 Department deleDep = db.Departments.Find(id);
@@ -78,7 +67,6 @@ namespace WebAPI1.Controllers
             {
                 return e.Message;
             }
-
         }
     }
 }

@@ -21,10 +21,8 @@ namespace WebAPI1.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, employee);
         }
 
-
         public string Post(Employee employee)
         {
-
             try
             {
                 db.Employees.Add(employee);
@@ -39,10 +37,8 @@ namespace WebAPI1.Controllers
 
         }
 
-
         public string Put(int id, Employee employee)
         {
-
             try
             {
                 Employee updUmp = db.Employees.Find(id);
@@ -65,7 +61,6 @@ namespace WebAPI1.Controllers
 
         public string Delete(int id)
         {
-
             try
             {
                 Employee deleUmp = db.Employees.Find(id);
